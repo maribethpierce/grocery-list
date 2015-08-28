@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Grocery List maker</title>
+  </head>
+
+  <body>
+    <h2>List</h2>
+    <h3>Groceries</h3>
+
+    <form action="/groceries" method="post">
+      <label for="groceries">New Ingredient:</label>
+      <input type="text" id="groceries" name="groceries" required="true">
+
+      <input type="submit">
+    </form>
+
+    <div>
+      <ul>
+        <% @grocery.each do |item| %>
+          <li><a href="/stuff/<%= item %>"><%= item %></a></li>
+        <% end %>
+      </ul>
+    </div>
+
+
+  </body>
+</html>
